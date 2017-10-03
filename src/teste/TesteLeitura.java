@@ -37,7 +37,7 @@ public class TesteLeitura {
                     
                 } catch (ClassNotFoundException | IOException ex){
                         System.out.println("Erro de leitura do arquivo!\n" + ex.getMessage());
-                        }
+                        } //fim try
     }
     
 }

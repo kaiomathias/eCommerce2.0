@@ -5,6 +5,11 @@
  */
 package teste;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.text.NumberFormat;
 import javax.swing.JOptionPane;
 import model.Carrinho;
@@ -78,6 +83,11 @@ public class eCommerce extends javax.swing.JFrame {
         });
 
         jButton2.setText("Teclado");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Monitor");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -87,12 +97,32 @@ public class eCommerce extends javax.swing.JFrame {
         });
 
         jButton4.setText("VGA");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Processador");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Impressora");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Finalizar Compra");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jtaCupom.setColumns(20);
         jtaCupom.setRows(5);
@@ -114,20 +144,19 @@ public class eCommerce extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel1)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton7)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(jButton7))
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)))
                     .addContainerGap()))
         );
         jPanel1Layout.setVerticalGroup(
@@ -174,6 +203,11 @@ public class eCommerce extends javax.swing.JFrame {
         });
 
         jButton8.setText("Abrir");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jtaArquivo.setColumns(20);
         jtaArquivo.setRows(5);
@@ -218,7 +252,7 @@ public class eCommerce extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -237,6 +271,8 @@ public class eCommerce extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        Item item = new Item(210, "Monitor LED FullHD", 1500.00);
+        adicionar(item);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jtxIDArqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxIDArqActionPerformed
@@ -245,42 +281,108 @@ public class eCommerce extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(carrinho != null) {
-            Item item = new Item(200,"Mouse Option " + "Logitech", 45.90);
-            carrinho.adicionarItem(item);
-            jtaCupom.append("Item: " + item.getId() + " - " 
-                    + item.getDescricao() + " : " 
-                    + NumberFormat.getCurrencyInstance().format(item.getValor())+ "\n");
-        } else {
-            JOptionPane.showMessageDialog(this, "Você precisa criar um carrinho antes de comprar!");
-        }
+        Item item = new Item(200, "Mouse Option " + "Logitech", 45.90);
+        adicionar(item);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jtxIDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxIDFocusLost
         // TODO add your handling code here:
-         int id; 
-            try{     
-                 id= Integer.parseInt(jtxID.getText());
-                 int r = JOptionPane.showConfirmDialog(this, 
-                         "Criar novo carrinho?",
-                         "Carrinho de Compra", 
-                         JOptionPane.YES_NO_OPTION);
-                 if (r == JOptionPane.YES_OPTION) {
-                     carrinho = new Carrinho(id);
-                     jtaCupom.setText(null);
-                 }
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this,"Informe um número!",
-                        "Carrinho de compra", JOptionPane.ERROR_MESSAGE);
-                jtxID.setText(null);
-                
+        int id;
+        try {
+            id = Integer.parseInt(jtxID.getText());
+            int r = JOptionPane.showConfirmDialog(this,
+                    "Criar novo carrinho?",
+                    "Carrinho de Compra",
+                    JOptionPane.YES_NO_OPTION);
+            if (r == JOptionPane.YES_OPTION) {
+                carrinho = new Carrinho(id);
+                jtaCupom.setText(null);
             }
-         
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Informe um número!",
+                    "Carrinho de compra", JOptionPane.ERROR_MESSAGE);
+            jtxID.setText(null);
+
+        }
+
     }//GEN-LAST:event_jtxIDFocusLost
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Item item = new Item(220, "Teclado Multilaser", 39.90);
+        adicionar(item);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        Item item = new Item(320, "Placa de Video GForce", 1500.00);
+        adicionar(item);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Item item = new Item(630, "Processador Intel i9", 2000.00);
+        adicionar(item);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        Item item = new Item(240, "Impressora laser", 999.99);
+        adicionar(item);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        String arquivoCarrinho = "C:/Temp/compra" + carrinho.getId() + ".dat";
+        ///try with resources
+        try (FileOutputStream fos = new FileOutputStream(arquivoCarrinho); ///fala com o SO
+                ObjectOutputStream o = new ObjectOutputStream(fos)) { //fala com o objeto
+            o.writeObject(carrinho);
+            JOptionPane.showMessageDialog(this, "Carrinho gravado com sucesso!");
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao gravar arquivo!",
+                    "Ecommerce2.0", JOptionPane.ERROR_MESSAGE);
+        } //fim try
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        String arquivoCompra = "C:/Temp/compra"+jtxIDArq.getText()+".dat";
+        Carrinho carrinho = null;
+        try(FileInputStream fis = new FileInputStream(arquivoCompra);
+                ObjectInputStream in = new ObjectInputStream(fis))
+                {
+                    carrinho = (Carrinho) in.readObject();
+                    jtaArquivo.append("Conteudo arquivo: \n");
+                    jtaArquivo.append(carrinho.imprimirCarrinho());
+                    
+                } catch (ClassNotFoundException | IOException ex){
+                        JOptionPane.showMessageDialog(this, "Erro ao ler arquivo!",
+                    "Ecommerce2.0", JOptionPane.ERROR_MESSAGE);
+                        } //fim try
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    public void adicionar(Item item) {
+        if (carrinho != null) {
+            if (!carrinho.adicionarItem(item)) {
+                int r = JOptionPane.showConfirmDialog(this,
+                        "Item ja existente no carrinho.\n Deseja remover?",
+                        "Carrinho de Compra",
+                        JOptionPane.YES_NO_OPTION);
+                if (r == JOptionPane.YES_OPTION) {
+                    carrinho.removerItem(item);
+                    jtaCupom.append("-" + item.getDescricao() + "\n");
+                }
+            } else {
+                jtaCupom.append("Item: " + item.getId() + " - "
+                        + item.getDescricao() + " : "
+                        + NumberFormat.getCurrencyInstance().format(item.getValor()) + "\n");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Você precisa criar um carrinho antes de comprar!");
+        }
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -312,7 +414,7 @@ public class eCommerce extends javax.swing.JFrame {
             }
         });
     }
-Carrinho carrinho = null;
+    Carrinho carrinho = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

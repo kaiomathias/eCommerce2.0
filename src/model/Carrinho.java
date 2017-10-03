@@ -51,9 +51,15 @@ public class Carrinho implements Serializable {
         return this.items;
     }
     
-    public void adicionarItem(Item item){
+    public boolean adicionarItem(Item item){
+        if(!items.contains(item)){
         this.items.add(item);
         this.totalCompra += item.getValor();
+        return true;
+        }else {
+            return false;
+        }
+        
     }
     
     public void removerItem(Item item){
